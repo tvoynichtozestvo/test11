@@ -1,0 +1,43 @@
+﻿<Page x:Class="WpfApp2.ProductsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp2"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" FontFamily="Candara" d:DesignWidth="800"
+      Title="ProductsPage">
+
+    <Grid>
+        <ListView Name="ProductList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,216,0" SelectionMode="Single">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="540">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="{Binding TypeAndNameProduct}" Grid.Column="0" Grid.Row="0" FontSize="16"></TextBlock>
+                        <TextBlock Text="{Binding ArticulNumber}" Grid.Column="0" Grid.Row="1"></TextBlock>
+                        <TextBlock Text="{Binding MinPrice}" Grid.Column="0" Grid.Row="2"></TextBlock>
+                        <TextBlock Text="{Binding MainMaterial}" Grid.Column="0" Grid.Row="3"></TextBlock>
+                        <TextBlock Text="{Binding Time}" Grid.Column="1" Grid.Row="0" FontSize="16" HorizontalAlignment="Center"></TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button Background="#355CBD" Foreground="White" x:Name="addBtn" Content="Добавление" HorizontalAlignment="Right" Margin="0,0,8,0" VerticalAlignment="Top" Height="31" Width="203" Click="addBtn_Click"/>
+        <Button Background="#355CBD" Foreground="White" x:Name="editBtn" Content="Редактирование" HorizontalAlignment="Right" Margin="0,44,8,0" VerticalAlignment="Top" Height="31" Width="203" Click="editBtn_Click"/>
+        <Button Background="#355CBD" Foreground="White" x:Name="openBtn" Content="Открыть" HorizontalAlignment="Right" Margin="0,90,8,0" VerticalAlignment="Top" Height="31" Width="203" Click="openBtn_Click"/>
+
+    </Grid>
+</Page>
